@@ -18,6 +18,9 @@ status.register("uptime", format="Uptime: {hours}h:{mins}m",)
 #mpd
 status.register("mpd", format="♫ {artist} - {title}",)
 
+#volume
+status.register("alsa", format="♪ {volume}",)
+
 #update notifier
 status.register("updates", backends = [pacman.Pacman(), yaourt.Yaourt(False)])
 
