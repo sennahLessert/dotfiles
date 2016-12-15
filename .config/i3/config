@@ -96,7 +96,7 @@ bindsym $mod+a focus parent
 bindsym $mod+1 workspace A
 bindsym $mod+2 workspace B
 bindsym $mod+3 workspace C
-bindsym $mod+4 workspace D 
+bindsym $mod+4 workspace D
 bindsym $mod+5 workspace E 
 #bindsym $mod+6 workspace 6
 #bindsym $mod+7 workspace 7
