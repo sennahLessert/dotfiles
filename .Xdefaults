@@ -1,6 +1,9 @@
 URxvt.perl-ext-common: clipboard,tabbed
 URxvt.scrollBar: False
 
+URxvt.font: xft:Source Code Pro:size=9
+URxvt.boldFont: xft:Source Code Pro:bold:size=9
+
 ! special
 *.foreground:   #f8f8f2
 *.background:   #272822
