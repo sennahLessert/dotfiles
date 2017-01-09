@@ -39,6 +39,7 @@ Plugin 'vim-scripts/FuzzyFinder.git'
 Plugin 'vim-scripts/tComment'
 Plugin 'wikitopian/hardmode'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()
 
@@ -75,3 +76,11 @@ imap <right> <nop>
 
 " disable bracket highlighting
 set noshowmatch
+
+" set tab width
+set tabstop=4
+" use tab with 4 spaces
+set shiftwidth=4
+set expandtab
+" do autoformat after save
+au BufWrite * :Autoformat
