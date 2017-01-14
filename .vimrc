@@ -39,14 +39,15 @@ Plugin 'vim-scripts/FuzzyFinder.git'
 Plugin 'vim-scripts/tComment'
 Plugin 'wikitopian/hardmode'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Chiel92/vim-autoformat'
 
 call vundle#end()
 
 " lightline configuration
 let g:lightline = {
-\ 'colorscheme': 'jellybeans',
-\ }
+            \ 'colorscheme': 'jellybeans',
+            \ }
 
 set laststatus=2
 
@@ -61,7 +62,7 @@ noremap <leader>f :FufFile<cr>
 noremap <leader>n :NERDTreeToggle<cr>
 
 if !has('gui_running')
-  set t_Co=256
+    set t_Co=256
 endif
 
 " Disable arrow keys
@@ -84,3 +85,10 @@ set shiftwidth=4
 set expandtab
 " do autoformat after save
 au BufWrite * :Autoformat
+
+" jsdoc
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_additional_descriptions=1
+let g:jsdoc_return=0
+let g:jsdoc_input_description=1
+nmap <silent> <leader>d <Plug>(jsdoc)
