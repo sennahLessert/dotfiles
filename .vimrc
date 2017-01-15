@@ -92,3 +92,6 @@ let g:jsdoc_additional_descriptions=1
 let g:jsdoc_return=0
 let g:jsdoc_input_description=1
 nmap <silent> <leader>d <Plug>(jsdoc)
+
+" hardmore!
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
