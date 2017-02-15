@@ -17,6 +17,7 @@ filetype indent on
 filetype plugin indent on
 " filetype off
 let g:molokai_original = 1
+let g:rehash256 = 1
 
 " =============
 " == Plugins ==
@@ -41,6 +42,7 @@ Plugin 'wikitopian/hardmode'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -95,3 +97,16 @@ nmap <silent> <leader>d <Plug>(jsdoc)
 
 " hardmore!
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+"vimdiff
+if &diff
+    map ] ]c
+    map [ [c
+endif
+
+" save
+nmap <leader>s :w<cr>
+" build
+nmap <leader>c :w<cr> :!python build.py<cr>
+" disable comment after new line command
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
