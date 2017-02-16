@@ -61,6 +61,7 @@ let jshint2_confirm = 0
 let mapleader = ","
 noremap <leader>b :FufBuffer<cr>
 noremap <leader>f :FufFile<cr>
+noremap <leader>r :FufRenewCache<cr>
 noremap <leader>n :NERDTreeToggle<cr>
 
 if !has('gui_running')
