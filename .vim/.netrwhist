@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/sennah/.config/dconf'
-let g:netrw_dirhist_2='/home/sennah/.config'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/sennah/.wildfly/wildfly-10.1.0.Final/standalone/configuration/standalone_xml_history'
+let g:netrw_dirhist_2='/home/sennah/Code/next-farming/wayline-manager'
+let g:netrw_dirhist_3='/home/sennah/Code/next-farming/appstore'
+let g:netrw_dirhist_4='/home/sennah/Code/next-farming/entities'
+let g:netrw_dirhist_5='/home/sennah/Code/next-farming/aocloud/src/main/webapp/bower_components/openui5-themelib_sap_bluecrystal'
