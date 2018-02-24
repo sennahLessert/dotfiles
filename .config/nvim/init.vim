@@ -23,7 +23,7 @@ syntax enable
 
 let g:neomake_javascript_jscs_maker = {
     \ 'exe': 'jscs',
-    \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+    \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--es5'],
     \ 'errorformat': '%f: line %l\, col %c\, %m',
     \ }
 let g:neomake_javascript_enabled_makers = ['jscs']
@@ -32,3 +32,8 @@ let g:neomake_java_enabled_makers = []
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>h :History<cr>
+
+autocmd! BufWritePost,BufEnter * Neomake
+nnoremap <leader><F2> :lopen<cr>
+nnoremap <leader><F3> :lclose<cr>
+
