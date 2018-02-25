@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'icymind/NeoSolarized'
 Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
@@ -18,22 +19,24 @@ colorscheme NeoSolarized
 set number
 set autoindent
 set tabstop=4
+set shiftwidth=4
+set expandtab
 filetype plugin indent on
 syntax enable
 
-let g:neomake_javascript_jscs_maker = {
-    \ 'exe': 'jscs',
-    \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--es5'],
-    \ 'errorformat': '%f: line %l\, col %c\, %m',
-    \ }
-let g:neomake_javascript_enabled_makers = ['jscs']
+"let g:neomake_javascript_jscs_maker = {
+    "\ 'exe': 'eslint'
+    "\ }
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_java_enabled_makers = []
 
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>h :History<cr>
 
-autocmd! BufWritePost,BufEnter * Neomake
-nnoremap <leader><F2> :lopen<cr>
-nnoremap <leader><F3> :lclose<cr>
+call neomake#configure#automake('rw', 1000)
+autocmd InsertChange,TextChanged * update | Neomake
+nnoremap <F2> :lopen<cr>
+nnoremap <F3> :lclose<cr>
 
+let g:deoplete#enable_at_startup = 1
