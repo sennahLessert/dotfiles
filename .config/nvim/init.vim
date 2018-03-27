@@ -10,6 +10,7 @@ Plug 'icymind/NeoSolarized'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'qpkorr/vim-bufkill'
 call plug#end()
 
 let mapleader=","
@@ -40,3 +41,6 @@ nnoremap <F2> :lopen<cr>
 nnoremap <F3> :lclose<cr>
 
 let g:deoplete#enable_at_startup = 1
+
+nnoremap <tab> :bn<cr>
+nnoremap <F5> :edit<cr>
