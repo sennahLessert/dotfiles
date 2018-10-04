@@ -15,10 +15,16 @@ call plug#end()
 
 let mapleader=","
 set termguicolors
-colorscheme NeoSolarized
+"colorscheme NeoSolarized
+colorscheme zenburn
 
 set number
+
+" indent
 set autoindent
+set smartindent
+
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -31,7 +37,8 @@ syntax enable
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_java_enabled_makers = []
 
-nnoremap <leader>f :Files<cr>
+"nnoremap <leader>f :Files<cr>
+nnoremap <leader>f :Files .<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>h :History<cr>
 
@@ -44,3 +51,21 @@ let g:deoplete#enable_at_startup = 1
 
 nnoremap <tab> :bn<cr>
 nnoremap <F5> :edit<cr>
+
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+"split
+nnoremap <leader>/ :vsplit<cr>
+nnoremap <leader>- :split<cr>
+
+" case insensitiv search
+set ignorecase
+set smartcase
+
+"remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+"disable swap files
+set noswapfile
