@@ -50,6 +50,7 @@ nnoremap <F3> :lclose<cr>
 let g:deoplete#enable_at_startup = 1
 
 nnoremap <tab> :bn<cr>
+nnoremap <s-tab> :bp<cr>
 nnoremap <F5> :edit<cr>
 
 set laststatus=2 " Always display the statusline in all windows
