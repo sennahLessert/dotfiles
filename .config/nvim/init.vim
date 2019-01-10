@@ -7,10 +7,10 @@ Plug 'vim-scripts/tComment'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'icymind/NeoSolarized'
-Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'qpkorr/vim-bufkill'
+Plug 'w0rp/ale'
 call plug#end()
 
 let mapleader=","
@@ -24,26 +24,26 @@ set number
 set autoindent
 set smartindent
 
-
 set tabstop=4
 set shiftwidth=4
 set expandtab
 filetype plugin indent on
 syntax enable
 
-"let g:neomake_javascript_jscs_maker = {
-    "\ 'exe': 'eslint'
-    "\ }
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_java_enabled_makers = []
+let b:ale_linters = {'javascript': ['eslint'], 'java': ['checkstyle']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+let g:ale_lint_on_enter = 1
+let g:ale_javascript_eslint_use_global = 1
 
-"nnoremap <leader>f :Files<cr>
 nnoremap <leader>f :Files .<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>h :History<cr>
 
-call neomake#configure#automake('rw', 1000)
-autocmd InsertChange,TextChanged * update | Neomake
+"call neomake#configure#automake('rw', 1000)
+"autocmd InsertChange,TextChanged * update | Neomake
 nnoremap <F2> :lopen<cr>
 nnoremap <F3> :lclose<cr>
 
@@ -65,8 +65,13 @@ nnoremap <leader>- :split<cr>
 set ignorecase
 set smartcase
 
-"remove trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
-
 "disable swap files
 set noswapfile
+
+set backup
+set backupdir=/tmp
+
+let g:ale_warn_about_trailing_whitespace = 1
+
+nnoremap <leader>+ :vertical resize +5<cr>
+nnoremap <leader>- :vertical resize -5<cr>
