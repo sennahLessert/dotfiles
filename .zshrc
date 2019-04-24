@@ -13,3 +13,4 @@ alias vim="nvim"
 export EDITOR=vim
 export AOCLHOME=~/Code/next-farming/
 export NMMHOME=~/Code/machine-management/
+export FZF_DEFAULT_COMMAND='fd --type f'
