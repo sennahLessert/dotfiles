@@ -1,11 +1,12 @@
-export ZSH="/home/sennah/.oh-my-zsh"
+export ZSH="/home/sennahlessert/.oh-my-zsh"
 ZSH_THEME="agnoster"
-plugins=(git)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-alias devMM="sh ~/Code/tmuxProfiles/machinemanagement.sh"
+alias devMM="sh ~/Code/scripts/nmm.sh"
 alias devAOCL="sh ~/Code/tmuxProfiles/aocloud.sh"
+alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
