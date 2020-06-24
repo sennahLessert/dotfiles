@@ -11,6 +11,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'qpkorr/vim-bufkill'
 Plug 'w0rp/ale'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 let mapleader=","
@@ -81,3 +82,6 @@ nnoremap <leader>- :vertical resize -5<cr>
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
+
+let g:delimitMate_expand_cr=1
+let g:delimitMate_expand_space=1
