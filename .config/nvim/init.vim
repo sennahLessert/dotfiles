@@ -12,7 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'qpkorr/vim-bufkill'
 Plug 'w0rp/ale'
 Plug 'Raimondi/delimitMate'
-Plug 'ap/vim-css-color'
+Plug 'gko/vim-coloresque'
 
 call plug#end()
 
